@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>فروشگاه</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:tahoma;
+  /* overflow: hidden; */
+  padding:30px;
+        background: linear-gradient(135deg, #000000, #00ee7f, #ff0000);
+ background-size: 200%;
+}
+      @font-face {
+        font-family: iran;
+        src: url(Far_KamrnBd.ttf);
+      }
+
+
+
+h2{text-align:center;margin-bottom:20px; color: white; font-family: iran;}
+.store{
+  display:flex;
+  gap:15px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.card{
+  width:200px;
+  background:rgba(255, 0, 0, 0.205);
+  padding:15px;
+  color: white;
+  border-radius:10px;
+  transition:.4s;
+}
+.card:hover{
+  transform: translateY(-5px);
+}
+.card button{
+  width:100%;
+  padding:8px;
+  background:#0a07b3;
+  font-weight: bold;
+  cursor: pointer;
+  color:white;
+  border:none;
+  border-radius:5px;
+  margin-top:10px;
+}
+.cart{
+  width:300px;
+  margin:25px auto;
+  background:white;
+  padding:15px;
+  border-radius:10px;
+  transition: .4s;
+}
+.cart:hover{
+  width:300px;
+  margin:25px auto;
+  background:white;
+  padding:15px;
+  border-radius:10px;
+  transform: translateY(5px);
+}
+
+.item{
+  background:#f3f3f3;
+  padding:8px;
+  margin-top:8px;
+  border-radius:5px;
+  font-weight:bold;
+}
+#send{
+  width:100%;
+  padding:10px;
+  background:green;
+  font-weight: bold;
+  color:white;
+  cursor: pointer;
+  border:none;
+  border-radius:5px;
+  margin-top:15px;
+}
+#totalPrice{
+  font-weight:bold;
+  margin-top:10px;
+  font-size:18px;
+}
+.exit{
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    padding: 10px 16px;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    background-color: red;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: iran;
+}
+#receipt {
+    position: fixed;
+    top: -300px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    background: white;
+    padding: 15px;
+    text-align: center;
+
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    transition: top 0.6s ease;
+}
+a{
+  padding: 10px  63px;
+  text-decoration: none;
+
+}
+.calucator{
+ position: absolute;
+ top: 10px;right: 10px;
+ padding: 10px 20px;
+ font-weight: bold;
+ background: rgba(100, 15, 15, 0.445);
+ border-radius: 6px;
+ border: none;
+ cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h2>فروشگاه کامپیوتر</h2>
+
+<div class="store">
+
+  <div class="card">
+    <h3>کیس</h3>
+    <p>1500000 تومان</p>
+    <button onclick="add('کیس',1500000)">افزودن</button>
+  </div>
+
+  <div class="card">
+    <h3>ماوس</h3>
+    <p>500000 تومان</p>
+    <button onclick="add('ماوس',500000)">افزودن</button>
+  </div>
+
+  <div class="card">
+    <h3>کیبرد</h3>
+    <p>1200000 تومان</p>
+    <button onclick="add('کیبرد',1200000)">افزودن</button>
+  </div>
+
+  <div class="card">
+    <h3>مادربرد</h3>
+    <p>800000 تومان</p>
+    <button onclick="add('مادربرد',800000)">افزودن</button>
+  </div>
+  <div class="card">
+    <h3>hard</h3>
+    <p>3200000 تومان</p>
+    <button onclick="add('hard',3200000)">افزودن</button>
+  </div>
+  <div class="card">
+    <h3>ssd</h3>
+    <p>880000 تومان</p>
+    <button onclick="add('ssd',880000)">افزودن</button>
+  </div>
+  <div class="card">
+    <h3>rom</h3>
+    <p>140000 تومان</p>
+    <button onclick="add('rom',140000)">افزودن</button>
+  </div>
+  <div class="card">
+    <h3>ram</h3>
+    <p>2000000 تومان</p>
+    <button onclick="add('ram',2000000)">افزودن</button>
+  </div>
+  <div class="card">
+    <h3>cpu</h3>
+    <p>580000 تومان</p>
+    <button onclick="add('cpu',580000)">افزودن</button>
+  </div>
+
+</div>
+<button class="calucator" onclick="calucator1()" >میتوانید از ماشین حساب نیز استفاده کنید</button>
+<div class="cart">
+  <h3>سبد خرید</h3>
+  <div id="cart"></div>
+
+  <p id="totalPrice">جمع کل: 0 تومان</p>
+
+  <button id="send" ><a href="http://localhost/project/Erfan/index.php"> ارسال اطلاعات خرید </a></button>
+</div>
+<script>
+let cart=[];
+let total=0;
+
+function add(name,price){
+  let item=cart.find(x=>x.name===name);
+
+  if(item){
+    item.count++;
+    item.totalPrice = item.count * item.price ;
+  }else{
+    cart.push({
+      name:name,
+      price:price,
+      count:1,
+      totalPrice:price
+    });
+  }
+
+  total += price;
+  show();
+}
+
+function show(){
+  let box=document.getElementById("cart");
+  box.innerHTML="=======";
+
+  cart.forEach(i=>{
+    box.innerHTML+=
+      "<div class='item'>"
+      + i.name +
+      " — تعداد: " + i.count +
+      " — قیمت کل: " + i.totalPrice + " تومان"
+      + "</div>";
+  });
+
+  document.getElementById("totalPrice").innerText =
+    "جمع کل: " + total + " تومان";
+}
+function calucator1(){
+  location.href="calc.html";
+}
+
+
+
+</script>
+<div id="receipt"></div>
+</body>
+</html>

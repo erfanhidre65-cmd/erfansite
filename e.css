@@ -1,0 +1,109 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background-image: url(erfan.png);
+  font-family:tahoma;
+  overflow: hidden;
+  padding:30px
+}
+
+
+
+
+h2{text-align:center;margin-bottom:20px; color: white; font-family: iran;}
+.store{
+  display:flex;
+  gap:15px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.card{
+  width:200px;
+  background:white;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:inset -20px 19px 20px 0px #818181;
+  transition:.4s;
+}
+.card:hover{
+  transform: translateY(-5px);
+  box-shadow:inset -13px -20px 20px 0px #818181;
+}
+.card button{
+  width:100%;
+  padding:8px;
+  background:#0077ff;
+  font-weight: bold;
+  cursor: pointer;
+  color:white;
+  border:none;
+  border-radius:5px;
+  margin-top:10px;
+}
+.cart{
+  width:300px;
+  margin:25px auto;
+  background:white;
+  padding:15px;
+  border-radius:10px;
+  transition: .4s;
+  box-shadow:inset -13px -20px 20px 0px #818181;
+}
+.cart:hover{
+  width:300px;
+  margin:25px auto;
+  background:white;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:inset -20px 19px 20px 0px #818181;
+  transform: translateY(5px);
+}
+
+.item{
+  background:#f3f3f3;
+  padding:8px;
+  margin-top:8px;
+  border-radius:5px;
+  font-weight:bold;
+}
+#send{
+  width:100%;
+  padding:10px;
+  background:green;
+  font-weight: bold;
+  color:white;
+  cursor: pointer;
+  border:none;
+  border-radius:5px;
+  margin-top:15px;
+}
+#totalPrice{
+  font-weight:bold;
+  margin-top:10px;
+  font-size:18px;
+}
+.exit{
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    padding: 10px 16px;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    background-color: red;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: iran;
+}
+#receipt {
+    position: fixed;
+    top: -300px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    background: white;
+    padding: 15px;
+    text-align: center;
+
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    transition: top 0.6s ease;}

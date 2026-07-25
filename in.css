@@ -1,0 +1,221 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background-image: url(erfan.png);
+
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+
+    
+    
+    height: 100vh;
+    
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:Arial,sans-serif;
+    
+}
+
+.login-box{
+
+    width:380px;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:0 10px 35px rgba(0,0,0,.35);
+}
+
+label{
+
+    color:rgb(0, 0, 0);
+
+    font-size: 20px;
+
+    font-weight:bold;
+
+    display: block;
+
+    margin-bottom:8px;
+
+}
+
+.input-box{
+
+    position:relative;
+
+    margin-bottom:25px;
+
+}
+
+.input-box i{
+
+    position:absolute;
+
+    left:15px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#777;
+
+    font-size:18px;
+
+}
+
+.input-box input{
+
+    width:100%;
+
+    padding:14px 14px 14px 45px;
+
+    border:none;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:16px;
+
+}
+
+input[type="submit"]{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:#8b5cf6;
+
+    color:white;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+input[type="submit"]:hover{
+
+    background:#6d28d9;
+    width: 100%;
+
+}
+
+    .social{
+        margin-top: 20%;
+        display: flex;
+    }
+    .social div{
+        background: rgb(105, 105, 105);
+        width: 150px;
+        border-radius: 20px;
+        padding: 12px;
+        background-color: rgb(98, 27, 204);
+        color: #eaf0fb;
+        text-align: center;
+
+    }
+   .social div:hover{
+  background-color: rgba(255,255,255,0.47);
+}
+.social .fb{
+  margin-left: 25px;
+}
+.social i{
+  margin-right: 4px;
+}
+.input-box{
+    position: relative;
+}
+
+.input-box label{
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: top .3s, color .3s, font-size .3s;
+    pointer-events: none;
+    color: black;
+    text-shadow:0 0 8px #8b5cf6;
+}
+
+.input-box input:focus ~ label,
+.input-box input:not(:placeholder-shown) ~ label{
+    top: -20%;
+    font-size: 15px;
+    color: rgb(35, 181, 132);
+    transform: rotate(-16dge);
+}
+.login-box{
+    text-align: center;
+    margin-bottom: 35px;
+}
+.logo{
+    width: -90%;
+    height: -100%;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#5b8cff,#8b5cf6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(91,140,255,.5);
+    margin-top: 80px;
+    
+}
+.login-header h1{
+    color: white;
+    margin-top: 20px;
+    font-size: 42px;
+
+}
+.login-header p{
+     color:#a7b1c8;
+
+    margin-top:8px;
+
+    font-size:16px;
+
+}
+.login-box{
+
+    width:420px;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    background:rgba(22,25,40,.75);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.5);
+
+}

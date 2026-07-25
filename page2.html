@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>فروشگاه</title>
+<link rel="stylesheet" href="e.css">
+
+</head>
+<body>
+
+<h2>فروشگاه</h2>
+
+<div class="store">
+
+  <div class="card">
+    <h3>پسته</h3>
+    <p>350000 تومان</p>
+    <button onclick="add('پسته',350000)">افزودن</button>
+  </div>
+
+  <div class="card">
+    <h3>زعفران</h3>
+    <p>500000 تومان</p>
+    <button onclick="add('زعفران',500000)">افزودن</button>
+  </div>
+
+  <div class="card">
+    <h3>چای</h3>
+    <p>120000 تومان</p>
+    <button onclick="add('چای',120000)">افزودن</button>
+  </div>
+
+  <div class="card">
+    <h3>خرما</h3>
+    <p>80000 تومان</p>
+    <button onclick="add('خرما',80000)">افزودن</button>
+  </div>
+
+</div>
+
+<div class="cart">
+  <h3>سبد خرید</h3>
+  <div id="cart"></div>
+
+  <p id="totalPrice">جمع کل: 0 تومان</p>
+
+  <button id="send" onclick="send()">ارسال اطلاعات خرید</button>
+</div>
+<button onclick="exit()" class="exit">بازگشت</button>
+<script>
+let cart=[];
+let total=0;
+
+function add(name,price){
+  let item=cart.find(x=>x.name===name);
+
+  if(item){
+    item.count++;
+    item.totalPrice = item.count * item.price ;
+  }else{
+    cart.push({
+      name:name,
+      price:price,
+      count:1,
+      totalPrice:price
+    });
+  }
+
+  total += price;
+  show();
+}
+
+function show(){
+  let box=document.getElementById("cart");
+  box.innerHTML="=======";
+
+  cart.forEach(i=>{
+    box.innerHTML+=
+      "<div class='item'>"
+      + i.name +
+      " — تعداد: " + i.count +
+      " — قیمت کل: " + i.totalPrice + " تومان"
+      + "</div>";
+  });
+
+  document.getElementById("totalPrice").innerText =
+    "جمع کل: " + total + " تومان";
+}
+
+function send(){
+  if(cart.length===0){
+    alert("سبد خرید خالی است");
+    return;
+  }
+
+  alert("اطلاعات خرید شما ثبت شد");
+  return;
+      let box = document.getElementById("receipt");
+    box.innerHTML = "<h3>رسید خرید</h3>";
+
+    let total = 0;
+
+    cart.forEach(i=>{
+        if(i.count > 0){
+            let itemTotal = i.count * i.price;
+            total += itemTotal;
+
+            box.innerHTML += 
+                i.name + " - تعداد: " + i.count +
+                " - قیمت کل: " + itemTotal + " تومان<br>";
+        }
+    });
+
+    
+    let now = new Date();
+    let date = now.toLocaleDateString("fa-IR");
+    let time = now.toLocaleTimeString("fa-IR");
+
+    box.innerHTML += "<br><strong>جمع کل: " + total + " تومان</strong><br>";
+    box.innerHTML += "<br><strong>تاریخ خرید: " + date + "</strong><br>";
+    box.innerHTML += "<strong>ساعت خرید: " + time + "</strong>";
+
+    setTimeout(()=>{
+        box.style.top = "20px";
+    }, 50);
+  location.reload();
+}
+function exit(){
+    location.href="page1.html";
+}
+
+</script>
+<div id="receipt"></div>
+</body>
+</html>

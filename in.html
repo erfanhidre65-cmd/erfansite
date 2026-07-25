@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه</title>
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="in.css">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+<div class="container">
+
+    <form class="login-box" action="page1.html"> 
+        <div class="login-header">
+
+    <div class="logo">
+        <i class="fa-solid fa-store"></i>
+    </div>
+
+    <h1>Shop</h1>
+
+</div>
+        <div class="input-box">
+            <input type="text" id="login" placeholder=" "
+            required> 
+            <label for="login">Username</label>
+        </div>
+        <div class="input-box">
+            <input type="password" id="pass" placeholder=""
+            required>
+
+            <label for="pass">Password</label>
+
+        </div>
+
+        <input type="submit" value="Login">
+           <div class="social">
+          <div class="go"><i class="fab fa-google"></i>  Google</div>
+          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+        </div>
+
+    </form>
+</div>
+
+</button>
+<script>
+const form = document.querySelector(".login-box");
+const password = document.getElementById("pass");
+
+form.addEventListener("submit", function (event) {
+    if (password.value.length < 8) {
+         password.style.border = "2px solid red";
+        event.preventDefault();
+        alert("رمز عبور باید حداقل ۸ کاراکتر باشد.");
+
+    }
+    else {
+        password.style.border = "2px solid green";
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="سایت شخصی عرفان. نمونه‌کارها، رزومه و پروژه‌های طراحی وب با HTML و CSS.">
+    <link rel="apple-touch-icon" sizes="57x57" href="logo.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="logo.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="logo.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="logo.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="logo.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="logo.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="logo.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+    <link rel="manifest" href="logo.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="logo.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>عرفان حیدری | توسعه‌دهنده فرانت‌اند</title>
+    <link rel="stylesheet" href="my.css">
+</head>
+
+<body>
+
+    <div class="bg-blur one"></div>
+    <div class="bg-blur two"></div>
+    <div class="bg-grid"></div>
+
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <div class="container">
+
+        <header class="navbar">
+            <a href="#home" class="logo">
+                <img src="logo.png" alt="لوگو" class="logo-img">
+                <div class="logo-text">
+                    <h2>عرفان حیدری</h2>
+                    <span>Front-End Developer</span>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="menu">
+                    <li><a href="#home" class="active">خانه</a></li>
+                    <li><a href="#about">درباره من</a></li>
+                    <li><a href="#skills">مهارت‌ها</a></li>
+                    <li><a href="#projects">نمونه‌کارها</a></li>
+                    <li><a href="#contact">تماس</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero" id="home">
+                <div class="hero-content">
+                    
+                    <!-- بخش راست: متن‌ها -->
+                    <div class="hero-right">
+                        <span class="hero-tag">👋 سلام، من</span>
+                        <h1>
+                            <span>عرفان حیدری</span>
+                            <br>
+                            <span class="gradient-text">توسعه‌دهنده فرانت‌اند</span>
+                        </h1>
+
+                        <p>
+                            عاشق طراحی رابط‌های کاربری مدرن، توسعه وب‌سایت‌های سریع و ساخت تجربه‌های کاربری حرفه‌ای هستم.
+                            تمرکز من روی طراحی تمیز، کدنویسی استاندارد و ساخت پروژه‌های زیبا و کاربردی است.
+                        </p>
+
+                        <div class="hero-buttons">
+                            <a href="#projects" class="primary-btn">
+                                مشاهده نمونه‌کارها <span class="arrow-icon">←</span>
+                            </a>
+                            <a href="#" class="secondary-btn">
+                                <span class="download-icon">📥</span> دانلود رزومه
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- بخش چپ: عکس و حلقه نورانی -->
+                    <div class="hero-left">
+                        <div class="hero-image-wrapper">
+                            <!-- حلقه نورانی بک گراند -->
+                            <div class="glowing-ring"></div>
+                            
+                            <!-- عکس اصلی -->
+                            <img src="start.png" alt="عرفان حیدری" class="main-avatar">
+                            
+                            <!-- آیکون‌های شناور -->
+                            <div class="floating-badge badge-html">
+                                <img src="html-logo.png" alt="HTML"
+                                style="width: 150%;">
+                                <span>HTML5</span>
+                            </div>
+                            <div class="floating-badge badge-css">
+                                <img src="css-logo.png" alt="CSS"
+                                style="width: 150%;">
+                                <span>CSS3</span>
+                            </div>
+                            <div class="floating-badge badge-js">
+                                <img src="js-logo.png" alt="JS"
+                                style="width: 150%;">
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- نشانگر اسکرول -->
+                <div class="scroll-indicator">
+                    <div class="mouse-icon"></div>
+                    <span>اسکرول کنید</span>
+                </div>
+            </section>
+
+            <!-- ================= STATS BANNER (با SVGهای جدید) ================= -->
+            <section class="stats-banner">
+                <div class="stats-container">
+                    
+                    <!-- آیتم اول: پشتیبانی ۲۴/۷ -->
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="url(#purpleGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <h2>24/7</h2>
+                            <span>پشتیبانی</span>
+                        </div>
+                    </div>
+
+                    <!-- آیتم دوم: پروژه‌های موفق -->
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="url(#purpleGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <h2>+۱۰</h2>
+                            <span>پروژه موفق</span>
+                        </div>
+                    </div>
+
+                    <!-- آیتم سوم: سال تجربه -->
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="url(#purpleGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <h2>۱</h2>
+                            <span>سال تجربه</span>
+                        </div>
+                    </div>
+
+                    <!-- آیتم چهارم: ریسپانسیو -->
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="url(#purpleGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <h2>۱۰۰٪</h2>
+                            <span>ریسپانسیو</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ================= ABOUT SECTION ================= -->
+            <section class="about" id="about">
+                <div class="section-header">
+                    <span class="section-tag">درباره من</span>
+                    <h2>کمی بیشتر با من آشنا شوید</h2>
+                    <p>برنامه‌نویسی برای من فقط نوشتن کد نیست؛ ساخت تجربه‌هایی است که کاربران از آن لذت ببرند.</p>
+                </div>
+
+                <div class="about-wrapper">
+                    <div class="about-image">
+                        <div class="about-image-box">
+                            <img src="axer.png" alt="عرفان حیدری">
+                        </div>
+                    </div>
+
+                    <div class="about-content">
+                        <h3>توسعه‌دهنده فرانت‌اند با علاقه به طراحی رابط کاربری</h3>
+                        <p>من تلاش می‌کنم وب‌سایت‌هایی طراحی کنم که در کنار ظاهر زیبا، سریع، بهینه و کاربرپسند باشند.</p>
+                        <p>تمرکز اصلی من روی HTML، CSS، JavaScript و طراحی رابط‌های مدرن است.</p>
+
+                        <div class="about-cards">
+                            <div class="about-card">
+                                <div class="card-icon"></div>
+                                <h4>عرفان حیدری</h4>
+                                <span>نام</span>
+                            </div>
+                            <div class="about-card">
+                                <div class="card-icon">📅</div>
+                                <h4>۱۸ سال</h4>
+                                <span>سن</span>
+                            </div>
+                            <div class="about-card">
+                                <div class="card-icon">📍</div>
+                                <h4>تهران</h4>
+                                <span>موقعیت</span>
+                            </div>
+                            <div class="about-card">
+                                <div class="card-icon">🤝</div>
+                                <h4>آماده همکاری</h4>
+                                <span>وضعیت همکاری</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="skills" id="skills">
+                <div class="section-header">
+                    <span class="section-tag">مهارت‌ها</span>
+                    <h2>تکنولوژی‌هایی که استفاده می‌کنم</h2>
+                    <p>ابزارهایی که برای ساخت رابط‌های کاربری مدرن استفاده می‌کنم.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <img src="assets/icons/html.png" alt="HTML">
+                        <h3>HTML5</h3>
+                        <p>ساختار استاندارد صفحات وب</p>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/icons/css.png" alt="CSS">
+                        <h3>CSS3</h3>
+                        <p>طراحی، انیمیشن و ریسپانسیو</p>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/icons/js.png" alt="JavaScript">
+                        <h3>JavaScript</h3>
+                        <p>تعاملات و منطق سایت</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PROJECTS SECTION ================= -->
+            <section class="projects" id="projects">
+                <div class="section-header">
+                    <span class="section-tag">نمونه‌کارها</span>
+                    <h2>پروژه‌هایی که ساخته‌ام</h2>
+                    <p>برخی از پروژه‌هایی که با تمرکز روی طراحی مدرن و تجربه کاربری توسعه داده‌ام.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="sr.jpg" alt="AI Landing Page">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">طراحی رابط کاربری</span>
+                            <h3>AI Landing Page</h3>
+                            <p>طراحی لندینگ پیج مدرن با Glassmorphism، انیمیشن نرم و طراحی ریسپانسیو.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="ui.html">مشاهده پروژه</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="assets/project2.jpg" alt="Dashboard">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">داشبورد مدیریتی</span>
+                            <h3>Admin Dashboard</h3>
+                            <p>داشبورد حرفه‌ای با کارت‌های آماری، نمودار و رابط کاربری مدرن.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/project2/index.html">مشاهده پروژه</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="assets/project3.jpg" alt="Portfolio">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">وب‌سایت شخصی</span>
+                            <h3>Personal Portfolio</h3>
+                            <p>طراحی سایت شخصی با تمرکز روی برند شخصی و تجربه کاربری.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/project3/index.html">مشاهده پروژه</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ================= CONTACT SECTION ================= -->
+            <section class="contact" id="contact">
+                <div class="section-header">
+                    <span class="section-tag">ارتباط با من</span>
+                    <h2>آماده همکاری روی پروژه بعدی شما هستم</h2>
+                    <p>برای طراحی سایت، رابط کاربری یا همکاری می‌توانید با من در ارتباط باشید.</p>
+                </div>
+
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h3>ایمیل</h3>
+                                <span>erfan@email.com</span>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <h3>تلفن</h3>
+                                <span>09037926860</span>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h3>موقعیت</h3>
+                                <span>تهران</span>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://instagram.com/webne.ts" target="_blank">Instagram</a>
+                            <a href="#">LinkedIn</a>
+                            <a href="#">Telegram</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <form>
+                            <input type="text" placeholder="نام شما">
+                            <input type="email" placeholder="ایمیل شما">
+                            <input type="text" placeholder="موضوع">
+                            <textarea rows="6" placeholder="پیام خود را بنویسید..."></textarea>
+                            <button type="submit">ارسال پیام</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ================= FOOTER ================= -->
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Logo">
+                </div>
+                <p>توسعه‌دهنده فرانت‌اند | طراحی رابط کاربری مدرن</p>
+            </div>
+
+            <div class="footer-menu">
+                <a href="#home">خانه</a>
+                <a href="#about">درباره من</a>
+                <a href="#skills">مهارت‌ها</a>
+                <a href="#projects">نمونه‌کارها</a>
+                <a href="#contact">تماس</a>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://instagram.com/webne.ts" target="_blank">Instagram</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Telegram</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© ۲۰۲۶ عرفان حیدری | تمامی حقوق محفوظ است.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- تعریف گرادینت نئونی مخفی برای آیکون‌های SVG -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#7C3AED" />
+                <stop offset="100%" stop-color="#3B82F6" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+</body>
+
+</html>
