@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="سایت شخصی عرفان حیدری. نمونه‌کارها، رزومه و پروژه‌های طراحی وب با HTML و CSS.">
+    <link rel="apple-touch-icon" sizes="57x57" href="logo.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="logo.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="logo.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="logo.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="logo.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="logo.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="logo.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+    <link rel="manifest" href="logo.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="logo.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>عرفان حیدری | توسعه‌دهنده فرانت‌اند</title>
+    <link rel="stylesheet" href="my.css">
+</head>
+
+<body>
+
+    <div class="bg-blur one"></div>
+    <div class="bg-blur two"></div>
+    <div class="bg-grid"></div>
+
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <div class="container">
+
+        <header class="navbar">
+            <a href="#home" class="logo">
+                <img src="logo.png" alt="لوگو" class="logo-img">
+                <div class="logo-text">
+                    <h2>عرفان حیدری</h2>
+                    <span>Front-End Developer</span>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="menu">
+                    <li><a href="#home" class="active">خانه</a></li>
+                    <li><a href="#about">درباره من</a></li>
+                    <li><a href="#skills">مهارت‌ها</a></li>
+                    <li><a href="#projects">نمونه‌کارها</a></li>
+                    <li><a href="#contact">تماس</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero" id="home">
+                <div class="hero-content">
+                    
+                    <!-- بخش راست: متن‌ها -->
+                    <div class="hero-right">
+                        <span class="hero-tag">👋 سلام، من</span>
+                        <h1>
+                            <span>عرفان حیدری</span>
+                            <br>
+                            <span class="gradient-text">توسعه‌دهنده فرانت‌اند</span>
+                        </h1>
+
+                        <p>
+                            عاشق طراحی رابط‌های کاربری مدرن، توسعه وب‌سایت‌های سریع و ساخت تجربه‌های کاربری حرفه‌ای هستم.
+                            تمرکز من روی طراحی تمیز، کدنویسی استاندارد و ساخت پروژه‌های زیبا و کاربردی است.
+                        </p>
+
+                        <div class="hero-buttons">
+                            <a href="#projects" class="primary-btn">
+                                مشاهده نمونه‌کارها <span class="arrow-icon">←</span>
+                            </a>
+                            <a href="#" class="secondary-btn">
+                                <span class="download-icon">📥</span> دانلود رزومه
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- بخش چپ: عکس و حلقه نورانی -->
+                    <div class="hero-left">
+                        <div class="hero-image-wrapper">
+                            <!-- حلقه نورانی بک گراند -->
+                            <div class="glowing-ring"></div>
+                            
+                            <!-- عکس اصلی -->
+                            <img src="start.png" alt="عرفان حیدری" class="main-avatar">
+                            
+                            <!-- آیکون‌های شناور -->
+                            <div class="floating-badge badge-html">
+                                <img src="html-logo.png" alt="HTML" style="width: 150%;">
+                                <span>HTML5</span>
+                            </div>
+                            <div class="floating-badge badge-css">
+                                <img src="css-logo.png" alt="CSS" style="width: 150%;">
+                                <span>CSS3</span>
+                            </div>
+                            <div class="floating-badge badge-js">
+                                <img src="js-logo.png" alt="JS" style="width: 150%;">
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- نشانگر اسکرول -->
+                <div class="scroll-indicator">
+                    <div class="mouse-icon"></div>
+                    <span>اسکرول کنید</span>
+                </div>
+            </section>
+
+            <!-- ================= ویژگی اول: کارت ترکیبی (درباره من / آمار / مهارت‌ها) ================= -->
+            <section class="overview">
+                <div class="overview-grid">
+                    
+                    <!-- ستون اول: درباره من -->
+                    <div class="overview-col about-box">
+                        <span class="sub-title">درباره من</span>
+                        <h3 class="card-title">توسعه‌دهنده خلاق وب</h3>
+                        <p class="card-desc">
+                            من یک توسعه‌دهنده فرانت‌اند هستم که به طراحی رابط‌های کاربری مدرن، سریع و کاربرپسند علاقه دارم. تمرکز من روی خلق تجربه‌های دیجیتال بی‌نقص است.
+                        </p>
+                        <a href="#about" class="overview-link">
+                            بیشتر بخوانید <span class="arrow-icon">←</span>
+                        </a>
+                    </div>
+
+                    <!-- ستون دوم: آمار و ارقام همراه با انیمیشن شمارنده -->
+                    <div class="overview-col stats-box border-x-desktop">
+                        <div class="stat-mini-card">
+                            <div class="stat-icon-wrapper">💼</div>
+                            <h4 class="counter" data-target="1" data-suffix="+">0</h4>
+                            <span>سال تجربه</span>
+                        </div>
+                        <div class="stat-mini-card">
+                            <div class="stat-icon-wrapper">🚀</div>
+                            <h4 class="counter" data-target="10" data-suffix="+">0</h4>
+                            <span>پروژه موفق</span>
+                        </div>
+                        <div class="stat-mini-card">
+                            <div class="stat-icon-wrapper">💯</div>
+                            <h4 class="counter" data-target="100" data-suffix="٪">0</h4>
+                            <span>ریسپانسیو</span>
+                        </div>
+                    </div>
+
+                    <!-- ستون سوم: مهارت‌ها -->
+                    <div class="overview-col skills-box">
+                        <span class="sub-title">مهارت‌ها</span>
+                        <h3 class="card-title">تکنولوژی‌های کلیدی</h3>
+                        <div class="skill-tags">
+                            <span class="skill-badge">🟧 HTML5</span>
+                            <span class="skill-badge">🟦 CSS3</span>
+                            <span class="skill-badge">🟨 JavaScript</span>
+                            <span class="skill-badge">🐙 Git</span>
+                            <span class="skill-badge">📱 Responsive</span>
+                            <span class="skill-badge">✨ UI/UX</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ================= ABOUT SECTION ================= -->
+            <section class="about" id="about">
+                <div class="section-header">
+                    <span class="section-tag">درباره من</span>
+                    <h2>کمی بیشتر با من آشنا شوید</h2>
+                    <p>برنامه‌نویسی برای من فقط نوشتن کد نیست؛ ساخت تجربه‌هایی است که کاربران از آن لذت ببرند.</p>
+                </div>
+
+                <div class="about-wrapper">
+                    <div class="about-image">
+                        <div class="about-image-box">
+                            <img src="axer.png" alt="عرفان حیدری">
+                        </div>
+                    </div>
+
+                    <div class="about-content">
+                        <h3>توسعه‌دهنده فرانت‌اند با علاقه به طراحی رابط کاربری</h3>
+                        <p>من تلاش می‌کنم وب‌سایت‌هایی طراحی کنم که در کنار ظاهر زیبا، سریع، بهینه و کاربرپسند باشند.</p>
+                        <p>تمرکز اصلی من روی HTML، CSS، JavaScript و طراحی رابط‌های مدرن است.</p>
+
+                        <div class="about-cards">
+                            <div class="about-card">
+                                <div class="card-icon">👤</div>
+                                <h4>عرفان حیدری</h4>
+                                <span>نام</span>
+                            </div>
+                            <div class="about-card">
+                                <div class="card-icon">📅</div>
+                                <h4>۱۸ سال</h4>
+                                <span>سن</span>
+                            </div>
+                            <div class="about-card">
+                                <div class="card-icon">📍</div>
+                                <h4>تهران</h4>
+                                <span>موقعیت</span>
+                            </div>
+                            <div class="about-card">
+                                <div class="card-icon">🤝</div>
+                                <h4>آماده همکاری</h4>
+                                <span>وضعیت همکاری</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= SKILLS SECTION (قابلیت جدید استوری تعاملی) ================= -->
+            <section class="skills" id="skills">
+                <div class="section-header">
+                    <span class="section-tag">مهارت‌ها</span>
+                    <h2>تکنولوژی‌هایی که استفاده می‌کنم</h2>
+                    <p>ابزارهایی که برای ساخت رابط‌های کاربری مدرن استفاده می‌کنم (برای مشاهده جزئیات روی استوری‌ها کلیک کنید).</p>
+                </div>
+
+                <div class="skills-grid">
+                    
+                    <!-- مهارت HTML5 -->
+                    <div class="skill-card">
+                        <!-- دکمه استوری تعاملی -->
+                        <div class="skill-icon-wrapper" onclick="openSkillModal('HTML5', 'اچ‌تی‌ام‌ال (HTML5) زبان استاندارد ساختاردهی صفحات وب است که اسکلت و پایه‌ریزی تمامی بخش‌های محتوایی سایت را تشکیل می‌دهد. تسلط بر تگ‌های معنایی (Semantic) و بهینه‌سازی سئو از اصول اولیه من در کدنویسی است.', 'html-logo.png')" title="مشاهده استوری HTML5">
+                            <div class="story-ring"></div>
+                            <img src="html-logo.png" alt="HTML" class="avatar-in-ring" style="margin-bottom: 1%;">
+                        </div>
+                        <h3>HTML5</h3>
+                        <p>ساختار استاندارد صفحات وب</p>
+                    </div>
+
+                    <!-- مهارت CSS3 -->
+                    <div class="skill-card">
+                        <!-- دکمه استوری تعاملی -->
+                        <div class="skill-icon-wrapper" onclick="openSkillModal('CSS3', 'سی‌اس‌اس (CSS3) برای استایل‌دهی، طراحی بصری جذاب، انیمیشن‌های نرم و پیاده‌سازی قالب‌های کاملاً واکنش‌گرا (Responsive) با استفاده از تکنیک‌های مدرن مانند Flexbox و Grid استفاده می‌شود.', 'css-logo.png')" title="مشاهده استوری CSS3">
+                            <div class="story-ring"></div>
+                            <img src="css-logo.png" alt="CSS" class="avatar-in-ring" style="margin-bottom: 1%;">
+                        </div>
+                        <h3>CSS3</h3>
+                        <p>طراحی، انیمیشن و ریسپانسیو</p>
+                    </div>
+
+                    <!-- مهارت JavaScript -->
+                    <div class="skill-card">
+                        <!-- دکمه استوری تعاملی -->
+                        <div class="skill-icon-wrapper" onclick="openSkillModal('JavaScript', 'جاوااسکریپت (JavaScript) زبان برنامه‌نویسی سمت کاربر است که برای خلق تعاملات پویا، اعتبارسنجی فرم‌ها، کار با APIها و ساخت رابط‌های کاربری هوشمند و مدرن در وب‌سایت‌ها به کار می‌رود.', 'js-logo.png')" title="مشاهده استوری JavaScript">
+                            <div class="story-ring"></div>
+                            <img src="js-logo.png" alt="JavaScript" class="avatar-in-ring" style="margin-bottom: 1%;">
+                        </div>
+                        <h3>JavaScript</h3>
+                        <p>تعاملات و منطق سایت</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="projects" id="projects">
+                <div class="section-header">
+                    <span class="section-tag">نمونه‌کارها</span>
+                    <h2>پروژه‌هایی که ساخته‌ام</h2>
+                    <p>برخی از پروژه‌هایی که با تمرکز روی طراحی مدرن و تجربه کاربری توسعه داده‌ام.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="sr.jpg" alt="AI Landing Page">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">طراحی رابط کاربری</span>
+                            <h3>AI Landing Page</h3>
+                            <p>طراحی لندینگ پیج مدرن با Glassmorphism، انیمیشن نرم و طراحی ریسپانسیو.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="ui.html">مشاهده پروژه</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="assets/project2.jpg" alt="Dashboard">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">داشبورد مدیریتی</span>
+                            <h3>Admin Dashboard</h3>
+                            <p>داشبورد حرفه‌ای با کارت‌های آماری، نمودار و رابط کاربری مدرن.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/project2/index.html">مشاهده پروژه</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="assets/project3.jpg" alt="Portfolio">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">وب‌سایت شخصی</span>
+                            <h3>Personal Portfolio</h3>
+                            <p>طراحی سایت شخصی با تمرکز روی برند شخصی و تجربه کاربری.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/project3/index.html">مشاهده پروژه</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="contact" id="contact">
+                <div class="section-header">
+                    <span class="section-tag">ارتباط با من</span>
+                    <h2>آماده همکاری روی پروژه بعدی شما هستم</h2>
+                    <p>برای طراحی سایت، رابط کاربری یا همکاری می‌توانید با من در ارتباط باشید.</p>
+                </div>
+
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h3>ایمیل</h3>
+                                <span>erfan@email.com</span>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <h3>تلفن</h3>
+                                <span>09037926860</span>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h3>موقعیت</h3>
+                                <span>تهران</span>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://instagram.com/webne.ts" target="_blank">Instagram</a>
+                            <a href="#">LinkedIn</a>
+                            <a href="https://t.me/Yas_pis" target="_blank" rel="noopener noreferrer" aria-label="Telegram Chat">
+                                Telegram
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <form>
+                            <input type="text" placeholder="نام شما">
+                            <input type="email" placeholder="ایمیل شما">
+                            <input type="text" placeholder="موضوع">
+                            <textarea rows="6" placeholder="پیام خود را بنویسید..."></textarea>
+                            <button type="submit">ارسال پیام</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- ================= ویژگی دوم: بنر دعوت به همکاری (CTA) ================= -->
+        <section class="cta-section">
+            <div class="cta-container">
+                <div class="cta-text-wrapper">
+                    <span class="cta-subtitle">بیایید با هم همکاری کنیم</span>
+                    <h2 class="cta-title">برای پروژه بعدی شما آماده‌ام!</h2>
+                    <p class="cta-description">
+                        اگر به یک وب‌سایت مدرن، سریع و با طراحی حرفه‌ای نیاز دارید، یا ایده‌ای خلاقانه در سر دارید، خوشحال می‌شوم درباره آن گفتگو کنیم.
+                    </p>
+                </div>
+
+                <div class="cta-action">
+                    <a href="#contact" class="cta-button">
+                        <span>شروع همکاری</span>
+                        <span class="btn-arrow">←</span>
+                    </a>
+                    <div class="cta-floating-icon">✉️</div>
+                </div>
+
+                <!-- نور پس‌زمینه تزئینی -->
+                <div class="cta-glow-effect"></div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Logo">
+                </div>
+                <p>توسعه‌دهنده فرانت‌اند | طراحی رابط کاربری مدرن</p>
+            </div>
+
+            <div class="footer-menu">
+                <a href="#home">خانه</a>
+                <a href="#about">درباره من</a>
+                <a href="#skills">مهارت‌ها</a>
+                <a href="#projects">نمونه‌کارها</a>
+                <a href="#contact">تماس</a>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://instagram.com/webne.ts" target="_blank">Instagram</a>
+                <a href="#">LinkedIn</a>
+                <a href="https://t.me/Yas_pis" target="_blank" rel="noopener noreferrer" aria-label="Telegram Chat">
+                   Telegram
+                </a>
+            </div>
+            
+            <div class="visitor-counter">
+                <span class="visitor-icon">👀</span>
+                <span class="visitor-text">بازدید کل سایت:</span>
+                <span id="visitor-count" class="visitor-number">...</span>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© ۲۰۲۶ عرفان حیدری | تمامی حقوق محفوظ است.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ================= مودال (پاپ‌آپ) استوری مهارت‌ها ================= -->
+    <div class="modal-overlay" id="skill-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeSkillModal()">&times;</button>
+            
+            <div class="skill-icon-wrapper modal-avatar">
+                <div class="story-ring"></div>
+                <img id="modal-img" src="" alt="Logo" class="avatar-in-ring">
+            </div>
+
+            <h3 id="modal-title" class="modal-title"></h3>
+            <p id="modal-desc" class="modal-description"></p>
+            <button onclick="closeSkillModal()" class="primary-btn modal-close-btn" style="width: 100%; justify-content: center; margin-top: 10px;">بستن و بازگشت</button>
+        </div>
+    </div>
+
+    <!-- تعریف گرادینت نئونی مخفی برای آیکون‌های SVG -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#7C3AED" />
+                <stop offset="100%" stop-color="#3B82F6" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <!-- اسکریپت‌ها -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // انیمیشن شمارنده اعداد
+            const counters = document.querySelectorAll(".counter");
+           
+            const animateCounter = (counter) => {
+                const target = +counter.getAttribute("data-target");
+                const suffix = counter.getAttribute("data-suffix") || "";
+                let count = 0;
+                const speed = 40; 
+                const increment = Math.ceil(target / speed);
+
+                const updateCount = () => {
+                    count += increment;
+                    if (count < target) {
+                        counter.innerText = count + suffix;
+                        setTimeout(updateCount, 30);
+                    } else {
+                        counter.innerText = target + suffix;
+                    }
+                };
+                updateCount();
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => observer.observe(counter));
+
+            // منوی موبایل (Mobile Menu Toggle)
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.navbar nav');
+            const menuLinks = document.querySelectorAll('.navbar .menu li a');
+
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('is-active');
+                    navMenu.classList.toggle('is-open');
+                });
+            }
+
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (menuToggle && navMenu) {
+                        menuToggle.classList.remove('is-active');
+                        navMenu.classList.remove('is-open');
+                    }
+                });
+            });
+
+            // شمارنده بازدید سایت (Visitor Counter)
+            const counterElement = document.getElementById("visitor-count");
+            if (counterElement) {
+                fetch("https://api.countapi.xyz/hit/erfantech-portfolio/visits")
+                    .then(response => response.json())
+                    .then(data => {
+                        counterElement.textContent = data.value.toLocaleString('fa-IR');
+                    })
+                    .catch(error => {
+                        console.error("Error fetching visitor count:", error);
+                        counterElement.textContent = "خطا";
+                    });
+            }
+        });
+
+        // ================= توابع مدیریت مودال (پاپ‌آپ استوری) =================
+        const skillModal = document.getElementById('skill-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-desc');
+        const modalImg = document.getElementById('modal-img');
+
+        function openSkillModal(title, desc, img) {
+            modalTitle.textContent = title;
+            modalDesc.textContent = desc;
+            modalImg.src = img;
+            skillModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // توقف اسکرول صفحه در زمان باز بودن مودال
+        }
+
+        function closeSkillModal() {
+            skillModal.classList.remove('active');
+            document.body.style.overflow = ''; // فعال‌سازی مجدد اسکرول صفحه
+        }
+
+        // بستن مودال با کلیک در فضای خالی پشت آن
+        skillModal.addEventListener('click', (e) => {
+            if (e.target === skillModal) {
+                closeSkillModal();
+            }
+        });
+
+        // بستن مودال با فشردن کلید Esc روی کیبورد
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && skillModal.classList.contains('active')) {
+                closeSkillModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
