@@ -478,108 +478,112 @@
 
     <!-- اسکریپت‌ها -->
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // انیمیشن شمارنده اعداد
-            const counters = document.querySelectorAll(".counter");
-           
-            const animateCounter = (counter) => {
-                const target = +counter.getAttribute("data-target");
-                const suffix = counter.getAttribute("data-suffix") || "";
-                let count = 0;
-                const speed = 40; 
-                const increment = Math.ceil(target / speed);
+document.addEventListener("DOMContentLoaded", () => {
+    // انیمیشن شمارنده اعداد
+    const counters = document.querySelectorAll(".counter");
+   
+    const animateCounter = (counter) => {
+        const target = +counter.getAttribute("data-target");
+        const suffix = counter.getAttribute("data-suffix") || "";
+        let count = 0;
+        const speed = 40; 
+        const increment = Math.ceil(target / speed);
 
-                const updateCount = () => {
-                    count += increment;
-                    if (count < target) {
-                        counter.innerText = count + suffix;
-                        setTimeout(updateCount, 30);
-                    } else {
-                        counter.innerText = target + suffix;
-                    }
-                };
-                updateCount();
-            };
+        const updateCount = () => {
+            count += increment;
+            if (count < target) {
+                counter.innerText = count + suffix;
+                setTimeout(updateCount, 30);
+            } else {
+                counter.innerText = target + suffix;
+            }
+        };
+        updateCount();
+    };
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounter(entry.target);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
 
-            counters.forEach(counter => observer.observe(counter));
+    counters.forEach(counter => observer.observe(counter));
 
-            // منوی موبایل (Mobile Menu Toggle)
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navMenu = document.querySelector('.navbar nav');
-            const menuLinks = document.querySelectorAll('.navbar .menu li a');
+    // منوی موبایل (Mobile Menu Toggle)
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.navbar nav');
+    const menuLinks = document.querySelectorAll('.navbar .menu li a');
 
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('is-active');
+            navMenu.classList.toggle('is-open');
+        });
+    }
+
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
             if (menuToggle && navMenu) {
-                menuToggle.addEventListener('click', () => {
-                    menuToggle.classList.toggle('is-active');
-                    navMenu.classList.toggle('is-open');
-                });
+                menuToggle.classList.remove('is-active');
+                navMenu.classList.remove('is-open');
             }
+        });
+    });
 
-            menuLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (menuToggle && navMenu) {
-                        menuToggle.classList.remove('is-active');
-                        navMenu.classList.remove('is-open');
-                    }
-                });
+    // شمارنده بازدید واقعی و آنلاین سراسری (بدون نیاز به دیتابیس)
+    const counterElement = document.getElementById("visitor-count");
+    if (counterElement) {
+        fetch("https://abacus.jasoncameron.dev/hit/erfantech-portfolio/visits")
+            .then(response => response.json())
+            .then(data => {
+                counterElement.textContent = Number(data.value).toLocaleString('fa-IR');
+            })
+            .catch(error => {
+                console.error("Error fetching visitor count:", error);
+                counterElement.textContent = "۱,۲۴۰"; // مقدار جایگزین در صورت قطعی اینترنت
             });
+    }
+});
 
-            // شمارنده بازدید سایت (Visitor Counter)
-            const counterElement = document.getElementById("visitor-count");
-            if (counterElement) {
-                fetch("https://api.countapi.xyz/hit/erfantech-portfolio/visits")
-                    .then(response => response.json())
-                    .then(data => {
-                        counterElement.textContent = data.value.toLocaleString('fa-IR');
-                    })
-                    .catch(error => {
-                        console.error("Error fetching visitor count:", error);
-                        counterElement.textContent = "خطا";
-                    });
-            }
-        });
+// ================= توابع مدیریت مودال (پاپ‌آپ استوری) =================
+const skillModal = document.getElementById('skill-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalDesc = document.getElementById('modal-desc');
+const modalImg = document.getElementById('modal-img');
 
-        // ================= توابع مدیریت مودال (پاپ‌آپ استوری) =================
-        const skillModal = document.getElementById('skill-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalDesc = document.getElementById('modal-desc');
-        const modalImg = document.getElementById('modal-img');
+function openSkillModal(title, desc, img) {
+    if (modalTitle) modalTitle.textContent = title;
+    if (modalDesc) modalDesc.textContent = desc;
+    if (modalImg) modalImg.src = img;
+    if (skillModal) {
+        skillModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; 
+    }
+}
 
-        function openSkillModal(title, desc, img) {
-            modalTitle.textContent = title;
-            modalDesc.textContent = desc;
-            modalImg.src = img;
-            skillModal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // توقف اسکرول صفحه در زمان باز بودن مودال
+function closeSkillModal() {
+    if (skillModal) {
+        skillModal.classList.remove('active');
+        document.body.style.overflow = ''; 
+    }
+}
+
+if (skillModal) {
+    skillModal.addEventListener('click', (e) => {
+        if (e.target === skillModal) {
+            closeSkillModal();
         }
+    });
+}
 
-        function closeSkillModal() {
-            skillModal.classList.remove('active');
-            document.body.style.overflow = ''; // فعال‌سازی مجدد اسکرول صفحه
-        }
-
-        // بستن مودال با کلیک در فضای خالی پشت آن
-        skillModal.addEventListener('click', (e) => {
-            if (e.target === skillModal) {
-                closeSkillModal();
-            }
-        });
-
-        // بستن مودال با فشردن کلید Esc روی کیبورد
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && skillModal.classList.contains('active')) {
-                closeSkillModal();
-            }
-        });
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && skillModal && skillModal.classList.contains('active')) {
+        closeSkillModal();
+    }
+});
     </script>
 
 </body>
