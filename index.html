@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="logo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
     <link rel="icon" type="image/png" sizes="192x192" href="logo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="logo.png"
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
     <link rel="icon" type="image/png" sizes="96x96" href="logo.png">
     <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
     <link rel="manifest" href="logo.png">
@@ -375,7 +375,7 @@
                     <!-- Project 2 -->
                     <article class="project-card">
                         <div class="project-image">
-                            <img src="assets/project2.jpg" alt="Dashboard">
+                            <img src="dashbord.png" alt="Dashboard">
                         </div>
                         <div class="project-content">
                             <span class="project-category">داشبورد مدیریتی</span>
@@ -387,7 +387,7 @@
                                 <span>JavaScript</span>
                             </div>
                             <div class="project-links">
-                                <a href="projects/project2/index.html">مشاهده پروژه</a>
+                                <a href="dash.html">مشاهده پروژه</a>
                             </div>
                         </div>
                     </article>
@@ -395,19 +395,19 @@
                     <!-- Project 3 -->
                     <article class="project-card">
                         <div class="project-image">
-                            <img src="assets/project3.jpg" alt="Portfolio">
+                            <img src="scrol.jpg" alt="Portfolio">
                         </div>
                         <div class="project-content">
                             <span class="project-category">وب‌سایت شخصی</span>
                             <h3>Personal Portfolio</h3>
-                            <p>طراحی سایت شخصی با تمرکز روی برند شخصی و تجربه کاربری.</p>
+                            <p>با اسکرول ویدیو کنترل می‌شود</p>
                             <div class="project-tech">
                                 <span>HTML</span>
                                 <span>CSS</span>
                                 <span>JavaScript</span>
                             </div>
                             <div class="project-links">
-                                <a href="projects/project3/index.html">مشاهده پروژه</a>
+                                <a href="ScrollVideoSite/vi.html">مشاهده پروژه</a>
                             </div>
                         </div>
                     </article>
@@ -430,7 +430,7 @@
 </svg></div>
                             <div>
                                 <h3>ایمیل</h3>
-                                <span>erfan@email.com</span>
+                                <span>erfanhidre65@email.com</span>
                             </div>
                         </div>
                         <div class="contact-card">
@@ -463,13 +463,29 @@
                     </div>
 
                     <div class="contact-form">
-                        <form>
-                            <input type="text" placeholder="نام شما">
-                            <input type="email" placeholder="ایمیل شما">
-                            <input type="text" placeholder="موضوع">
-                            <textarea rows="6" placeholder="پیام خود را بنویسید..."></textarea>
-                            <button type="submit">ارسال پیام</button>
-                        </form>
+
+<form action="https://formsubmit.co/erfanhidre65@gmail.com" method="POST">
+
+    <input type="text" name="name" placeholder="نام شما" required>
+
+    <input type="email" name="email" placeholder="ایمیل شما" required>
+
+    <input type="text" name="subject" placeholder="موضوع">
+
+    <textarea name="message" rows="6" placeholder="پیام خود را بنویسید..." required></textarea>
+
+    <!-- تنظیمات FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+
+    <!-- بعد از ارسال به همین سایت برگردد -->
+
+
+    <button type="submit">
+        ارسال پیام
+    </button>
+
+</form>
                     </div>
                 </div>
             </section>
