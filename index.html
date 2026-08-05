@@ -479,6 +479,8 @@
     <input type="hidden" name="_template" value="table">
 
     <!-- بعد از ارسال به همین سایت برگردد -->
+    <input type="hidden" name="_next" value="https://erfanhidre65-cmd.github.io/erfansite/?success=true">
+<input type="hidden" name="_captcha" value="false">
 
 
     <button type="submit">
@@ -692,6 +694,10 @@ document.addEventListener('keydown', (e) => {
         closeSkillModal();
     }
 });
+        if (window.location.search.includes("success=true")) {
+    alert("✅ پیام شما با موفقیت ارسال شد.");
+    window.history.replaceState({}, document.title, window.location.pathname);
+}
     </script>
 
 </body>
