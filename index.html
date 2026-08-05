@@ -699,53 +699,106 @@ const params = new URLSearchParams(window.location.search);
 
 if (params.get("success") === "true") {
 
-    const notice = document.createElement("div");
+    const alert = document.createElement("div");
+    alert.id = "success-alert";
 
-    notice.innerHTML = `
-        <div style="
-            position:fixed;
-            top:30px;
-            left:50%;
-            transform:translateX(-50%);
-            background:#111827;
-            color:#fff;
-            padding:18px 30px;
-            border-radius:14px;
-            z-index:99999;
-            font-size:16px;
-            box-shadow:0 10px 35px rgba(0,0,0,.35);
-            overflow:hidden;
-            min-width:320px;
-            text-align:center;
-        ">
-            ✅ پیام شما با موفقیت ارسال شد.
-            <div style="
-                position:absolute;
-                bottom:0;
-                left:0;
-                height:4px;
-                width:100%;
-                background:#8b5cf6;
-                animation:loadingBar 3s linear forwards;
-            "></div>
+    alert.innerHTML = `
+        <div class="alert-content">
+            <span class="icon">✅</span>
+            <div class="text">
+                <h4>پیام ارسال شد</h4>
+                <p>پیام شما با موفقیت ارسال شد.</p>
+            </div>
         </div>
+        <div class="alert-progress"></div>
     `;
 
-    document.body.appendChild(notice);
+    document.body.appendChild(alert);
 
     const style = document.createElement("style");
     style.innerHTML = `
-        @keyframes loadingBar{
-            from{width:100%;}
-            to{width:0;}
-        }
-    `;
+#success-alert{
+    position:fixed;
+    top:25px;
+    left:50%;
+    transform:translateX(-50%);
+    width:360px;
+    background:#111827;
+    color:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+    z-index:99999;
+    animation:showAlert .35s ease;
+    font-family:inherit;
+}
+
+.alert-content{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:18px;
+}
+
+.icon{
+    font-size:28px;
+}
+
+.text h4{
+    margin:0;
+    font-size:17px;
+}
+
+.text p{
+    margin:5px 0 0;
+    color:#cbd5e1;
+    font-size:14px;
+}
+
+.alert-progress{
+    height:4px;
+    background:linear-gradient(90deg,#8b5cf6,#3b82f6);
+    animation:progress 3s linear forwards;
+}
+
+@keyframes progress{
+    from{width:100%;}
+    to{width:0;}
+}
+
+@keyframes showAlert{
+    from{
+        opacity:0;
+        transform:translate(-50%,-20px);
+    }
+    to{
+        opacity:1;
+        transform:translate(-50%,0);
+    }
+}
+
+@keyframes hideAlert{
+    from{
+        opacity:1;
+        transform:translate(-50%,0);
+    }
+    to{
+        opacity:0;
+        transform:translate(-50%,-20px);
+    }
+}
+`;
     document.head.appendChild(style);
 
-    setTimeout(()=>{
-        notice.remove();
-        history.replaceState({}, "", window.location.pathname);
-    },3000);
+    setTimeout(() => {
+        alert.style.animation = "hideAlert .35s ease forwards";
+
+        setTimeout(() => {
+            alert.remove();
+            history.replaceState({}, "", window.location.pathname);
+        }, 350);
+
+    }, 3000);
 }
     </script>
 
