@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fa" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time System Dashboard</title>
+    <link rel="stylesheet" href="dash.css">
+    <!-- لود کتابخانه Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+    <script src="dash.js" defer></script>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- نوار کناری مینیمال -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>RealDash</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#">Dashboard</a></li>
+            </ul>
+        </aside>
+
+        <!-- محتوای اصلی -->
+        <main class="main-content">
+            <!-- هدر -->
+            <header class="header">
+                <div class="title">
+                    <h2>Live System Monitor</h2>
+                </div>
+                <div class="user-profile">
+                    <span id="headerDeviceType">Checking Device...</span>
+                </div>
+            </header>
+
+            <!-- کارت‌های اطلاعات واقعی (دستگاه + باتری و شبکه) -->
+            <section class="real-stats-grid">
+                
+                <!-- کارت ۱: اطلاعات سخت‌افزار، سیستم و باتری -->
+                <div class="stat-card">
+                    <div class="card-header">
+                        <h3>Device & Battery</h3>
+                        <span class="icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                                <rect x="9" y="9" width="6" height="6"></rect>
+                                <line x1="9" y1="1" x2="9" y2="4"></line>
+                                <line x1="15" y1="1" x2="15" y2="4"></line>
+                                <line x1="9" y1="20" x2="9" y2="23"></line>
+                                <line x1="15" y1="20" x2="15" y2="23"></line>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="network-details">
+                        <p>Platform: <span id="devicePlatform">...</span></p>
+                        <p>OS: <span id="deviceOS">...</span></p>
+                        <p>Browser: <span id="deviceBrowser">...</span></p>
+                        <p>Battery: <span id="batteryStatus">Checking...</span></p>
+                    </div>
+                </div>
+
+                <!-- کارت ۲: وضعیت شبکه، IP و پینگ هوشمند -->
+                <div class="stat-card network-widget" id="networkWidget">
+                    <div class="card-header">
+                        <h3>Network Status</h3>
+                        <span class="icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                                <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                                <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="network-details">
+                        <p>Status: <span id="onlineStatus" class="status-online">Checking...</span></p>
+                        <p>Connection: <span id="connectionType">...</span></p>
+                        <p>Network Gen: <span id="networkGen">...</span></p>
+                        <p>Ping: <span id="pingValue">Checking...</span></p>
+                        <p>Public IP: <span id="ipAddress">Loading...</span></p> 
+                    </div>
+                </div>
+            </section>
+
+            <!-- بخش کیلومترشمار سرعت اینترنت -->
+            <section class="speedometer-section">
+                <div class="chart-container speedometer-container">
+                    <h3>Internet Speed (Downlink Estimate)</h3>
+                    
+                    <div class="speed-wrapper">
+                        <!-- نمودار سرعت‌سنج -->
+                        <canvas id="speedChart"></canvas>
+                        
+                        <!-- متن وسط کیلومترشمار -->
+                        <div class="speed-center-text">
+                            <h1 id="mainSpeedDisplay">0</h1>
+                            <p>Mbps</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
